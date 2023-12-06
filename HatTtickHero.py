@@ -76,16 +76,14 @@ class Game(simpleGE.Scene):
         self.background = pygame.image.load("FP.jpg")
         self.background = pygame.transform.scale(self.background, (640, 480))
         self.setCaption("Score a Hattrick")
-        #self.goalpost = Goalpost(self)
-        #self.ball = Ball(self)
-        #self.striker = Striker(self)
+        self.goalpost = Goalpost(self)
+        self.ball = Ball(self)
+        self.striker = Striker(self)
         
 
-        #self.instruction = Instructions()
-        #self.lblTimer = LblTimer()
-        #self.goalMissCounter = GoalMissCounter()
-
-        self.sprites = [self.goalpost]  
+        self.instruction = Instructions()
+        self.lblTimer = LblTimer()
+        self.goalMissCounter = GoalMissCounter()
     
         self.sprites = [self.goalpost, self.ball, self.striker, self.instruction, self.lblTimer, self.goalMissCounter]
 
@@ -142,11 +140,8 @@ class LblTimer(simpleGE.Label):
         self.timer.start()
         
 def main():
-
-
-    game = simpleGE.Scene()
+    game = Game()
     game.start()
-
 
 if __name__ == "__main__":
     main()
