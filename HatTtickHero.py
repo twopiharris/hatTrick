@@ -19,8 +19,7 @@ class Goalpost(simpleGE.SuperSprite):
         self.reset()
         
     def reset(self):
-        self.setDX(30)
-        
+        self.setDX(10)        
         
         
 class Ball(simpleGE.SuperSprite):
@@ -36,10 +35,6 @@ class Ball(simpleGE.SuperSprite):
         self.score = 0
         self.misses = 0
         
-
-        
-
-        
     def checkEvents(self):
         if self.scene.isKeyPressed(pygame.K_SPACE):
             self.setDY(21)
@@ -54,8 +49,7 @@ class Ball(simpleGE.SuperSprite):
             self.misses += 1
             self.ballSound.play()
             self.reset() 
-            
-            
+                        
     def reset(self):
         self.y = 160
         self.x = 320
